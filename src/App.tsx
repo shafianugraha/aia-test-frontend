@@ -1,26 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react"
+import {
+  createBrowserRouter,
+  RouterProvider,
+  createRoutesFromElements,
+  Route
+} from "react-router-dom"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import HomeScreen from './routes/homeScreen'
+
+export type ImageFeed = {
+  title?: string
+  link?: string
+  media?: {m: string}
+  description?: string
+  tag?: boolean
 }
 
-export default App;
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <>
+      <Route path="/" element={<HomeScreen />} />
+    </>
+  )
+)
+
+const App: React.FunctionComponent = () => {
+  return (
+    <main>
+      <RouterProvider router={router} />
+    </main>
+  )
+}
+
+export default App
