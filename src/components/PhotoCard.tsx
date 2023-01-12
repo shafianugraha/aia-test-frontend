@@ -1,5 +1,6 @@
 import React from "react"
 import clsx from 'clsx'
+import { LazyLoadImage } from 'react-lazy-load-image-component'
 
 import { ImageFeed } from '../App'
 
@@ -15,7 +16,7 @@ const PhotoCard: React.FunctionComponent<photoCardProps> = ({data, key}) => {
         <p className={clsx('text-sm text-left text-white absolute left-5 bottom-10')}>{data.title}</p>
         <p className={clsx('text-xs text-left text-white absolute left-5 bottom-5')}>{data.author}</p>
       </div>
-      <img src={data.media?.m || ''} alt='images' width='300px' height='300px'></img>
+      <LazyLoadImage src={data.media?.m} alt='images' width='300px' height='300px'/>
     </div>
   )
 }
