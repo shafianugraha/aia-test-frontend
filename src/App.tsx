@@ -13,7 +13,8 @@ export type ImageFeed = {
   link?: string
   media?: {m: string}
   description?: string
-  tag?: boolean
+  tag?: string
+  author?: string
 }
 
 const router = createBrowserRouter(
