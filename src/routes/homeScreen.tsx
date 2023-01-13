@@ -29,7 +29,7 @@ const HomeScreen: React.FunctionComponent = () => {
     setIsLoading(false)
   }
 
-  const handleSetPage = (e: unknown, p: number) => {
+  const handleSetPage = (e: React.ChangeEvent<unknown>, p: number) => {
     setPage(p)
   }
 
